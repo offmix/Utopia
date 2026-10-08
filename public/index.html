@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Utopia Light - Server</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(180deg, #f3f7ff, #eaf1ff);
+      color: #152033;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .wrap {
+      max-width: 960px;
+      background: white;
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(37, 99, 235, 0.08);
+      padding: 40px;
+      text-align: center;
+    }
+    h1 {
+      color: #3b82f6;
+      margin-bottom: 20px;
+      font-size: 2.5rem;
+    }
+    p {
+      color: #5d6b82;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+    }
+    .links {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+    a {
+      display: inline-block;
+      padding: 12px 24px;
+      background: #3b82f6;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+    a:hover {
+      background: #2563eb;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Utopia Light</h1>
+    <p>A lightweight proxy and settings interface running on Vercel.</p>
+    <div class="links">
+      <a href="/">Home</a>
+      <a href="/index.html">Proxy</a>
+      <a href="/settings.html">Settings</a>
+    </div>
+  </div>
+</body>
+</html>

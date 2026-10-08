@@ -1,27 +1,33 @@
 {
   "version": 2,
-  "builds": [
+  "buildCommand": "npm install",
+  "outputDirectory": "public",
+  "env": {
+    "NODE_ENV": "production"
+  },
+  "rewrites": [
     {
-      "src": "index.mjs",
-      "use": "@vercel/node"
+      "source": "/bare/:path*",
+      "destination": "/api/bare.js?path=:path*"
     },
     {
-      "src": "main/**",
-      "use": "@vercel/static"
+      "source": "/service/:path*",
+      "destination": "/api/proxy.js?path=:path*"
+    },
+    {
+      "source": "/:path((?!api|_next).)*",
+      "destination": "/:path"
     }
   ],
-  "routes": [
+  "headers": [
     {
-      "src": "/bare/(.*)",
-      "dest": "index.mjs"
-    },
-    {
-      "src": "/service/(.*)",
-      "dest": "index.mjs"
-    },
-    {
-      "src": "^/(?!bare|service)(.*)",
-      "dest": "main/$1"
+      "source": "/main/:path*",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        }
+      ]
     }
   ]
 }

@@ -1,5 +1,10 @@
 services:
   - type: web
-    name: math
+    name: utopia-light
     env: docker
     plan: free
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 8080
